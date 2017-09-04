@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SimplePlay</string>
+    <string name="loading">正在加载请稍后...</string>
+</resources>
