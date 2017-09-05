@@ -85,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
         //获取本地视频
         GetMove.getLocalMove(context, new GetMove.OnFinishLinistener() {
             @Override
-            public void onFinish(List<LocalVideoInfo> musicInfoList) {
-                if (musicInfoList != null && musicInfoList.size() > 0) {
-                    videoInfoList = musicInfoList;
+            public void onFinish(List<LocalVideoInfo> localVideoList) {
+                if (localVideoList != null && localVideoList.size() > 0) {
+                    videoInfoList = localVideoList;
                     adapter = new ListAdapter();
                     handler.sendEmptyMessage(SUCCESS);
                 } else {

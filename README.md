@@ -73,9 +73,9 @@ public void click1(View view) {
 //获取本地视频
 GetMove.getLocalMove(context, new GetMove.OnFinishLinistener() {
             @Override
-            public void onFinish(List<LocalVideoInfo> musicInfoList) {
-                if (musicInfoList != null && musicInfoList.size() > 0) {
-                    videoInfoList = musicInfoList;
+            public void onFinish(List<LocalVideoInfo> localVideoList) {
+                if (localVideoList != null && localVideoList.size() > 0) {
+                    videoInfoList = localVideoList;
                     adapter = new ListAdapter();
                     handler.sendEmptyMessage(SUCCESS);
                 } else {
@@ -83,6 +83,21 @@ GetMove.getLocalMove(context, new GetMove.OnFinishLinistener() {
                 }
             }
         });
+
+
+//listview条目的监听事件
+class ItemOnclicklistener implements AdapterView.OnItemClickListener {
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Intent intent = new Intent(context, VideoActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("videolist", (Serializable) videoInfoList);
+            intent.putExtras(bundle);
+            intent.putExtra("position", position);
+            context.startActivity(intent);
+        }
+    }
 
 
 ```
