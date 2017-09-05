@@ -26,6 +26,9 @@
 * wedigt包中的CustomToast类是自定义的toast用法请参考源码
 
 ## 使用方法
+* 依赖库
+  > `compile 'com.videoplay:VideoView-Player:1.0.0'`
+  
 * 播放本地视频的时候需要申请的权限
   > * Manifest.permission.WRITE_EXTERNAL_STORAGE
   
